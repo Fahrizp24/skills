@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Skrip konversi massal gambar raster (JPEG/PNG) ke format WebP modern
-dengan penghitungan otomatis penghematan bandwidth.
+Batch image conversion utility for raster images (JPEG/PNG) to modern WebP format
+with automated bandwidth savings calculation.
 
-Penggunaan:
+Usage:
     python convert_webp.py --dir ./uploads --quality 82
 """
 
@@ -18,7 +18,7 @@ def convert_to_webp(target_dir, quality=82, keep_original=True):
     total_webp_bytes = 0
     converted_count = 0
 
-    print(f"[*] Memindai direktori: {target_dir}")
+    print(f"[*] Scanning directory: {target_dir}")
     for root, _, files in os.walk(target_dir):
         for file in files:
             ext = os.path.splitext(file)[1].lower()
@@ -26,14 +26,14 @@ def convert_to_webp(target_dir, quality=82, keep_original=True):
                 orig_path = os.path.join(root, file)
                 webp_path = os.path.splitext(orig_path)[0] + '.webp'
 
-                # Lewati jika file webp sudah ada
+                # Skip if webp counterpart already exists
                 if os.path.exists(webp_path):
                     continue
 
                 try:
                     orig_size = os.path.getsize(orig_path)
                     with Image.open(orig_path) as img:
-                        # Tangani transparansi RGBA
+                        # Handle RGBA transparency
                         if img.mode in ('RGBA', 'LA') or (img.mode == 'P' and 'transparency' in img.info):
                             img.save(webp_path, 'WEBP', quality=quality, method=6)
                         else:
@@ -52,23 +52,23 @@ def convert_to_webp(target_dir, quality=82, keep_original=True):
                         os.remove(orig_path)
 
                 except Exception as e:
-                    print(f"[ERR] Gagal mengonversi {file}: {e}", file=sys.stderr)
+                    print(f"[ERR] Failed to convert {file}: {e}", file=sys.stderr)
 
     saved_bytes = total_orig_bytes - total_webp_bytes
     print("\n" + "="*50)
-    print(f"Total file dikonversi : {converted_count}")
-    print(f"Ukuran asli total     : {total_orig_bytes / (1024*1024):.2f} MB")
-    print(f"Ukuran WebP total     : {total_webp_bytes / (1024*1024):.2f} MB")
+    print(f"Total files converted   : {converted_count}")
+    print(f"Original payload size   : {total_orig_bytes / (1024*1024):.2f} MB")
+    print(f"WebP payload size       : {total_webp_bytes / (1024*1024):.2f} MB")
     if total_orig_bytes > 0:
         overall_saved = (saved_bytes / total_orig_bytes) * 100
-        print(f"Penghematan bandwidth : {saved_bytes / (1024*1024):.2f} MB ({overall_saved:.1f}%)")
+        print(f"Bandwidth saved         : {saved_bytes / (1024*1024):.2f} MB ({overall_saved:.1f}%)")
     print("="*50)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Konversi gambar ke WebP untuk performa web")
-    parser.add_argument('--dir', required=True, help="Direktori target gambar")
-    parser.add_argument('--quality', type=int, default=82, help="Kualitas kompresi WebP (default: 82)")
-    parser.add_argument('--remove-original', action='store_true', help="Hapus file asli setelah konversi")
+    parser = argparse.ArgumentParser(description="Convert web images to WebP for maximum performance")
+    parser.add_argument('--dir', required=True, help="Target images directory")
+    parser.add_argument('--quality', type=int, default=82, help="WebP compression quality (default: 82)")
+    parser.add_argument('--remove-original', action='store_true', help="Remove source files after conversion")
     args = parser.parse_args()
 
     convert_to_webp(args.dir, quality=args.quality, keep_original=not args.remove_original)

@@ -1,19 +1,19 @@
 # skills
 
-Kumpulan skill agen otonom dan AI untuk rekayasa teknis web, optimasi SEO, serta penulisan karya ilmiah berbasis bukti.
+Autonomous agent skills for technical web engineering, performance optimization, and evidence-based writing.
 
 ---
 
-## Daftar Skill Tersedia
+## Available Skills
 
-### 1. Optimasi Performa & SEO Modern (`optimasi-performa-seo`)
-Skill untuk mendiagnosis dan merekayasa percepatan website hingga mencapai skor **PageSpeed 90+**, mengeliminasi **CLS (Cumulative Layout Shift)**, kompresi massal **WebP**, konfigurasi **Nginx 1-Year Immutable Caching**, serta implementasi standar baru **Agentic Browsing** (Lighthouse v13.3+).
+### 1. Web Performance & Technical SEO (`web-performance-seo`)
+A battle-tested skill to diagnose and engineer websites to achieve **PageSpeed 90+**, eliminate **CLS (Cumulative Layout Shift)**, batch-convert media to **WebP**, configure **Nginx 1-Year Immutable Caching**, and implement modern **Agentic Browsing** discovery standards (Lighthouse v13.3+).
 
 ```bash
-npx skills add Fahrizp24/skills --skill optimasi-performa-seo
+npx skills add Fahrizp24/skills --skill web-performance-seo
 ```
 
-*Dokumentasi:* [`skills/optimasi-performa-seo/SKILL.md`](skills/optimasi-performa-seo/SKILL.md) &bull; [`skills/optimasi-performa-seo/README.md`](skills/optimasi-performa-seo/README.md)
+*Documentation:* [`skills/web-performance-seo/SKILL.md`](skills/web-performance-seo/SKILL.md) &bull; [`skills/web-performance-seo/README.md`](skills/web-performance-seo/README.md)
 
 ---
 
@@ -28,6 +28,6 @@ npx skills add Fahrizp24/skills --skill penulisan-ilmiah-indonesia
 
 ---
 
-## Lisensi
+## License
 
 MIT

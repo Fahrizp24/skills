@@ -1,0 +1,15 @@
+# Your Brand Name (your-domain.com)
+
+> Concise and authoritative description of your publication, portal, or web product intended as machine-readable context for LLMs and autonomous browsing agents.
+
+## Content & Feeds
+- [Homepage](https://www.your-domain.com/): Official portal homepage with curated content and latest updates.
+- [Primary Section](https://www.your-domain.com/category/main): Curated topic directory and index.
+- [Syndicated RSS Feed](https://www.your-domain.com/rss.xml): Real-time XML syndication feed for automated readers and aggregators.
+- [Sitemap XML](https://www.your-domain.com/sitemap.xml): Complete index of all officially published and crawlable URLs.
+
+## Entity & Machine Discovery
+- Entity Name: Your Brand Name
+- Canonical URL: https://www.your-domain.com
+- Primary Language: English (en) / Indonesian (id-ID)
+- Agent Protocol: Supports WebMCP (Web Model Context Protocol) on document.modelContext for structured content search.
