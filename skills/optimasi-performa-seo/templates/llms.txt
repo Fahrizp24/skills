@@ -1,0 +1,15 @@
+# Your Media / Brand Name (your-domain.com)
+
+> Deskripsi singkat dan akurat mengenai identitas media, portal, atau produk Anda yang ditujukan sebagai konteks resmi bagi LLM dan agen otonom.
+
+## Content & Feeds
+- [Halaman Utama](https://www.your-domain.com/): Beranda utama portal dengan informasi terbaru.
+- [Kategori Utama](https://www.your-domain.com/category/main): Indeks artikel topik pilihan.
+- [RSS Feed Sindikasi](https://www.your-domain.com/rss.xml): Umpan sindikasi berita terbaru untuk automated readers.
+- [Sitemap XML](https://www.your-domain.com/sitemap.xml): Peta navigasi seluruh URL halaman resmi terindeks.
+
+## Entity & Machine Discovery
+- Nama Entitas: Your Brand Name
+- Domain Resmi: https://www.your-domain.com
+- Bahasa Utama: Bahasa Indonesia (id-ID)
+- Protokol Agen: Mendukung WebMCP (Web Model Context Protocol) pada document.modelContext untuk pencarian konten terstruktur.

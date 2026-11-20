@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agentic-discovery.org/schema/v1.json",
+  "name": "Your Brand",
+  "url": "https://www.your-domain.com",
+  "description": "Portal Berita Terkini dan Terpercaya",
+  "llms_txt": "https://www.your-domain.com/llms.txt",
+  "sitemap": "https://www.your-domain.com/sitemap.xml",
+  "rss": "https://www.your-domain.com/rss.xml",
+  "manifest": "https://www.your-domain.com/manifest.json",
+  "search": {
+    "url": "https://www.your-domain.com/search?q={query}",
+    "method": "GET"
+  },
+  "capabilities": [
+    "news_reading",
+    "article_search",
+    "rss_feed"
+  ]
+}
